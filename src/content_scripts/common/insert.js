@@ -180,7 +180,7 @@ function createInsert() {
         return "<div><span>{0}</span>{1}</div>".format(parsedUnicodeEmoji, ee[1]);
     }, (elm) => {
         return elm.firstElementChild.innerText;
-    }, new Promise((r) => {
+    }, () => new Promise((r) => {
         fetch(chrome.runtime.getURL("pages/emoji.tsv"))
             .then(res => Promise.all([res.text()]))
             .then(res => {
